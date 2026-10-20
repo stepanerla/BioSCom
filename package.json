@@ -1,0 +1,23 @@
+{
+  "name": "bioscom",
+  "version": "1.0.0",
+  "description": "BioSCom – Laboratory chemical inventory management system",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0"
+  },
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "fsevents": "^2.3.2",
+    "playwright": "^1.60.0",
+    "playwright-core": "^1.60.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

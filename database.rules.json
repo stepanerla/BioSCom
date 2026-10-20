@@ -1,0 +1,70 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "users": {
+      ".read": "auth != null",
+      "$uid": {
+        ".write": "auth != null && (auth.uid == $uid || root.child('users').child(auth.uid).child('role').val() == 'superadmin' || auth.token.email == '505618@muni.cz')"
+      }
+    },
+    "groups": {
+      ".read": true,
+      "$groupId": {
+        ".write": "auth != null"
+      }
+    },
+    "inventories": {
+      ".read": "auth != null",
+      "$groupId": {
+        ".write": "auth != null"
+      }
+    },
+    "history": {
+      ".read": "auth != null",
+      "$groupId": {
+        ".write": "auth != null"
+      }
+    },
+    "backups": {
+      ".read": "auth != null",
+      "$groupId": {
+        ".write": "auth != null"
+      }
+    },
+    "lastBackupTime": {
+      ".read": "auth != null",
+      "$groupId": {
+        ".write": "auth != null"
+      }
+    },
+    "shared_notices": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "shared_instruments": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "shared_print_catalog": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "shared_print_requests": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "empty_sandbox_placeholder": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "game_challenges": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "inventory": {
+      ".read": "auth != null",
+      ".write": "auth != null && (root.child('users').child(auth.uid).child('role').val() == 'superadmin' || auth.token.email == '505618@muni.cz')"
+    }
+  }
+}
